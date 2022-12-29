@@ -16,7 +16,7 @@ var myClock;
 startBtn.onclick = function () {
     clearInterval(myClock);
     myClock = setInterval(function () {
-        if (milliseconds === 99) {
+        if (milliseconds === 100) {
             seconds += 1;
             milliseconds = 0;
             if (seconds === 60) {
