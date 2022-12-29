@@ -38,6 +38,14 @@ html {
     justify-content: center;
 }
 
+.second {
+    width: 33px;
+}
+
+.millisecond {
+    width: 33px;
+}
+
 .listBtn {
     display: flex;
     justify-content: center;

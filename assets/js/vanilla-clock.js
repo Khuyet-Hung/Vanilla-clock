@@ -11,13 +11,15 @@ const resetBtn = $('#btnReset');
 var milliseconds = 0;
 var seconds = 0;
 var minutes = 0;
+var myClock;
 
 startBtn.onclick = function () {
-    var myClock = setInterval(function () {
-        if (milliseconds === 100) {
+    clearInterval(myClock);
+    myClock = setInterval(function () {
+        if (milliseconds === 99) {
             seconds += 1;
             milliseconds = 0;
-            if (seconds === 2) {
+            if (seconds === 60) {
                 minutes += 1;
                 seconds = 0;
             }
@@ -25,8 +27,8 @@ startBtn.onclick = function () {
             milliseconds += 1;
         }
         millisecond.innerText = milliseconds >= 10 ? String(milliseconds) : '0' + String(milliseconds);
-        second.innerText = seconds >= 10 ? String(seconds) + ':' : '0' + String(seconds) + ':';
-        minute.innerText = minutes >= 10 ? String(minutes) + ':' : '0' + String(minutes) + ':';
+        second.innerText = seconds >= 10 ? String(seconds) : '0' + String(seconds);
+        minute.innerText = minutes >= 10 ? String(minutes) : '0' + String(minutes);
     }, 10);
 
 
@@ -39,7 +41,7 @@ startBtn.onclick = function () {
         seconds = 0;
         minutes = 0;
         millisecond.innerText = milliseconds >= 10 ? String(milliseconds) : '0' + String(milliseconds);
-        second.innerText = seconds >= 10 ? String(seconds) + ':' : '0' + String(seconds) + ':';
-        minute.innerText = minutes >= 10 ? String(minutes) + ':' : '0' + String(minutes) + ':';
+        second.innerText = seconds >= 10 ? String(seconds) : '0' + String(seconds);
+        minute.innerText = minutes >= 10 ? String(minutes) : '0' + String(minutes);
     }
 }
